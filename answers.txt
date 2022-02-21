@@ -1,0 +1,73 @@
+
+What is your favourite new javascript feature and why? 
+First I love “Template Literals” in this I can easily concat the string and set dynamic values as well apart from this I love arrow functions, spread operators(…) . 
+
+Explain an interesting way in which you have used this javascript feature. 
+By arrow function we don’t need to implicit bind the function it is quite interesting and I use flat array function I can easily flattens nested array. 
+
+Is there any difference between regular function syntax and the shorter arrow function syntax? (Write the answer in your own words) 
+Syntax of arrow functions are quite concise  e.g (const func = () => //return something).There is no need to use of bind method arrow function automatically implicit bind the method and we can never use arrow function as constructor because arrow function doesn’t support “new” keyword. 
+
+What is the difference between ‘myFunctionCall(++foo)’   and  ‘myFunctionCall(foo++)’ Basically in this we are pre-incrementing and post-decrement foo variable.
+In first function we are pre-incrementing “foo” e.g if foo = 1 then this function take foo as 2 and same for the second function we are post-incrementing “foo” e.g if foo = 1 then this function take foo as 1. 
+
+In your own words, explain what a javascript ‘class’ is and how it differs from a function. 
+Classes often have methods, which are functions that are associated with a particular class and do things associated with the thing that the class is but if all you want is to do something a function is all you need. 
+
+
+Css:
+
+In your own words, explain css specificity. 
+According to me If there are two or more CSS rules that point to the same element the selector with higher priority will chosen. 
+
+In your own words, explain, what is ‘!important’ in css.  Also how does it work?  Are there any special circumstances when using it, where it’s behaviour might not be what you expect?  
+Important means that only the !important property value is to be applied to an element and all other declarations on the element are to be ignored.it is used in the circumstance when we overriding the styles that are previously declared in other style sources. 
+
+What is your prefered layout system: inline-block, floating + clearing, flex, grid, other?  And why? 
+I prefer grid because I can do two-dimensional layout in it. 
+
+Are negative margins legal and what do they do (margin: -20px)? 
+Yes, It is possible to give margins a negative value. This allows you to make the element closer to its top or left neighbour, or make its right and bottom neighbour closer to it 
+
+If a <div/> has no margin or other styling and a <p/> tag inside of it has a margin top of some kind, the margin from the <p/> tag will show up on the div instead (the margin will show above the div not inside of it), why is this?  What are the different things that can be done to prevent it? 
+In CSS, the adjoining margins of two or more boxes (which might or might not be siblings) can combine to form a single margin. Margins that combine this way are said to collapse, and the resulting combined margin is called a collapsed margin. So change the display of p to inline-block to avoid this behavior. 
+
+
+Unit tests:
+
+What technologies do you use to unit test your react components? 
+Jest and react testing library. 
+
+Are there any pitfalls associated with this technology that have caused you difficulty in the past? some how child components testing.   
+
+How do you test in your unit tests to see if the correct properties are being passed to child components.
+test("If ParentComponent is passed open and has data, ChildComponent is called with prop open and data", () => {
+  render(<ParentComponent open data="some data" />);
+  expect(mockChildComponent).toHaveBeenCalledWith(
+    expect.objectContaining({
+      open: true,
+      data: "some data",
+    })
+  );
+});
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+React:
+
+React test step1:  Create a react component that has a <div/> with a border. Inside this <div/> should be a <span/> that displays the ‘live’ width of the browser window at all times.  Keep in mind that the size of the window could easily be changed by the user and you should reflect this.  
+React test step2:  Inside the <div/> you created in the previous step, add a text input that, as a number is entered into it, uses that number to set the height of the div itself in pixels, live as you update the text field (keypress not change event). 
+React test step3:  Add the following code to your project root (same project as in step 2, but add the code in the global / window space):        Let divHeight;     window.setDivHeight = (height) => divHeight = height;  Add a HOC for your div component that allows you to set the height of your <div/> component from the previous steps by calling that external function.  If you do not know what a HOC is or how to create one, that is also fine, just mention that in your answer and instead create a parent component that can still do this (allow you to call that function ‘setDivHeight’ in order to set the height of the div manually.  Bare in mind that when the height of the div is forcefully set like this, the text fields value should also update to reflect this and should still carry on working as normal (user can continue to modify its value). 
